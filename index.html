@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff6b6b, #ffc3c3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            margin: 2rem 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: cardAppear 0.6s ease-out backwards;
+        }
+
+        .project-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .project-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .project-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            color: #ff4b6e;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            height: 60px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #ff4b6e;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card a:hover {
+            background: #ff2d55;
+            transform: scale(1.05);
+        }
+
+        .project-card a::after {
+            content: '❤️';
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: heartDrop 1.5s infinite;
+            opacity: 0;
+        }
+
+        @keyframes heartDrop {
+            0% {
+                top: -100%;
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 200%;
+                opacity: 0;
+            }
+        }
+
+        .floating-emojis {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            animation: floatEmoji 15s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes floatEmoji {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                padding: 0.5rem;
+            }
+
+            .project-card {
+                padding: 1rem;
+            }
+
+            .project-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-emojis" id="emojiContainer"></div>
+
+    <div class="header">
+        <h1>Feliz San Valentín Mi Amor ❤️</h1>
+        <p>He preparado estas sorpresas especialmente para ti</p>
+    </div>
+
+    <div class="projects-container">
+        <div class="project-card">
+            <img src="/api/placeholder/400/320" alt="Carta">
+            <h3>Mi Carta Para Ti 💌</h3>
+            <p>Una carta especial donde expreso todo lo que siento por ti</p>
+            <a href="./CartaMeli/index.html">Leer Carta</a>
+        </div>
+
+        <div class="project-card">
+            <img src="/api/placeholder/400/320" alt="Flores">
+            <h3>Flores Para Ti 🌹</h3>
+            <p>Flores virtuales que, como mi amor por ti, nunca se marchitarán</p>
+            <a href="./Flores/index.html">Ver Flores</a>
+        </div>
+
+        <div class="project-card">
+            <img src="/api/placeholder/400/320" alt="Fotos">
+            <h3>Nuestros Momentos 📸</h3>
+            <p>Una colección de fotos especiales que capturan nuestra historia</p>
+            <a href="./FoticosMovMeli/index.html">Ver Fotos</a>
+        </div>
+
+        <div class="project-card">
+            <img src="/api/placeholder/400/320" alt="Videos">
+            <h3>Videos Para Ti 🎥</h3>
+            <p>Videos especiales que he preparado con todo mi amor</p>
+            <a href="./VideosMeli/index.html">Ver Videos</a>
+        </div>
+    </div>
+
+    <script>
+        const emojis = ['❤️', '💝', '💖', '💕', '💗', '💓', '💞', '💘', '🌹', '✨'];
+        const container = document.getElementById('emojiContainer');
+
+        function createEmoji() {
+            const emoji = document.createElement('span');
+            emoji.className = 'emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.animationDuration = 15 + Math.random() * 10 + 's';
+            emoji.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(emoji);
+
+            emoji.addEventListener('animationend', () => {
+                emoji.remove();
+            });
+        }
+
+        // Crear emojis iniciales
+        for (let i = 0; i < 20; i++) {
+            createEmoji();
+        }
+
+        // Crear nuevos emojis periódicamente
+        setInterval(createEmoji, 3000);
+    </script>
+</body>
+
+</html>
